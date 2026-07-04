@@ -1,7 +1,7 @@
 {
   "name": "rocky-floor",
   "version": "0.1.0",
-  "description": "現場オペ向け。フロア状況把握・在庫売切のワンタップ・卓の移動/合流/クリア・コース進行・来店客把握を自然言語で。store_staff 向け。",
+  "description": "現場オペ向け。フロア状況把握（空席/滞留/要対応）と卓の移動/合流/強制クリアを自然言語で。store_staff 向け。",
   "author": { "name": "Techno-Rocky" },
   "mcpServers": "./.mcp.json"
 }
