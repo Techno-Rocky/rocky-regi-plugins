@@ -1,0 +1,43 @@
+Copyright © 2026 Techno-Rocky. All rights reserved.
+
+本リポジトリ「rocky-regi-plugins」に含まれるすべてのコンテンツ（スキル定義／
+SKILL.md、プロンプト、設定ファイル、ドキュメント等。以下「本ソフトウェア」）の
+著作権は Techno-Rocky に帰属します。全権利を留保します（All rights reserved）。
+
+■ 許諾される利用
+- 本リポジトリを claude.ai のプラグインマーケットプレイスとして登録し、各自の
+  ロッキーレジ・アカウントに接続して、そのまま利用すること。
+
+■ 禁止される事項（Techno-Rocky の書面による事前許諾がない限り）
+- 本ソフトウェアの全部または一部の複製・改変・翻案・再配布・再頒布。
+- スキル定義・プロンプト文言の転用（他製品・他リポジトリへの流用を含む）。
+- 本ソフトウェアを用いた派生物の公開・配布。
+
+■ 無保証・免責
+本ソフトウェアは「現状有姿（AS IS）」で提供され、明示黙示を問わずいかなる保証も
+行いません。利用に起因する一切の損害について、Techno-Rocky は責任を負いません。
+
+お問い合わせ: https://github.com/Techno-Rocky
+
+------------------------------------------------------------------------------
+
+Copyright © 2026 Techno-Rocky. All rights reserved.
+
+All content in this repository ("rocky-regi-plugins"), including skill definitions
+(SKILL.md), prompts, configuration files, and documentation (collectively, the
+"Software"), is the property of Techno-Rocky. All rights are reserved.
+
+Permitted use
+- Registering this repository as a plugin marketplace in claude.ai and using the
+  plugins as-is by connecting to your own rocky-regi account.
+
+Prohibited without Techno-Rocky's prior written permission
+- Copying, modifying, adapting, or redistributing the Software in whole or in part.
+- Reusing the skill definitions or prompt text in any other product or repository.
+- Publishing or distributing derivative works based on the Software.
+
+No warranty
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+Techno-Rocky SHALL NOT BE LIABLE FOR ANY DAMAGES ARISING FROM ITS USE.
+
+Contact: https://github.com/Techno-Rocky

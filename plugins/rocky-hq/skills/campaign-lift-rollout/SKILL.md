@@ -21,12 +21,12 @@ description: 本部が「この前のクーポン効いた?他店に展開して
 - create_visibility_schedule / update_visibility_schedule — 露出スケジュールの店別本適用(要人間承認)。
 - create_coupon_distribution_scenario / set_coupon_distribution_scenario_enabled / update_coupon_distribution_scenario / cancel_coupon_distribution — クーポン施策の展開・停止(holdout必須、要人間承認)。
 
-Meta広告側のlift評価は Meta公式Ads MCP が想定連携だが、契約前は未接続。接続済みでない環境では触れない。#1674ポータル巡回はBOT規約リスクで保留のため、本スキルから起動しない。
+Meta広告側のlift評価は Meta公式Ads MCP が想定連携だが、契約前は未接続。接続済みでない環境では触れない。外部ポータル巡回はBOT規約リスクで保留のため、本スキルから起動しない。
 
 ## 手順(この順で多段に呼ぶ)
 
 ### 1. 介入棚卸し(何を効果検証にかけるか決める)
-直近の施策を、holdoutあり/なしで2群に分ける。ADR-0069の二重計上回避に従い、同じ施策を両方の指標で語らない。
+直近の施策を、holdoutあり/なしで2群に分ける。二重計上回避の原則に従い、同じ施策を両方の指標で語らない。
 - holdoutあり(クーポン配布・LINEセグメント配信など) → get_campaign_roi
 - holdoutなし(価格改定・全店プロモ・露出変更など) → get_intervention_effect
 
@@ -119,12 +119,12 @@ UIウィジェットが有効な場面では、当たり施策のダッシュボ
 ## やってはいけないこと(ガード)
 - 全店一括反映をしない。必ず1店ずつドライラン→本適用の2段を踏む。
 - posterior_prob < 0.95 を「効いた」と言い換えない。「判断保留」で止める。
-- holdoutあり施策とholdoutなし施策を同じ指標で並べない(ADR-0069の二重計上回避)。
+- holdoutあり施策とholdoutなし施策を同じ指標で並べない(二重計上回避の原則)。
 - 全体売上が伸びていただけの店を「施策が効いた」と扱わない。地力と切り分ける工程を省略しない。
 - 権限不足の店を候補に混ぜない。書込は必ず capability で自動判定し、権限外店はスキップ表示。
 - 書込系(create_store_promo / create_coupon_distribution_scenario / create_visibility_schedule 等)は、対象店・件数・SQL相当・可逆性を提示し、人間承認を得てから実行する。
 - レート制限を超える反復呼び出しをしない。候補店が多いときは step 4 で先に絞ってから step 5 の照合に入る。
-- Meta公式Ads MCPは未接続環境では触れない。#1674ポータル巡回(BOT規約リスクで保留)は本スキルから起動しない。
+- Meta公式Ads MCPは未接続環境では触れない。外部ポータル巡回(BOT規約リスクで保留)は本スキルから起動しない。
 - 読み取り(get_*)と操作(create_/update_/cancel_/set_*_enabled)を混在させて一気に走らせない。判定と反映は必ず分ける。
 - SSRで生成する店長向け文面を予言・断定にしない(「必ず伸びます」ではなく「同型店ではliftが観測されました」)。
 - 「レジのAIが自動で横展開した」と表現しない。判断と承認は人間、レジは供給と受け皿。
