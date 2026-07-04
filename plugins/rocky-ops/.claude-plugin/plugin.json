@@ -1,0 +1,7 @@
+{
+  "name": "rocky-ops",
+  "version": "0.1.0",
+  "description": "外側スキル。合成消費者調査(SSR)・クリエイティブ画像生成・Meta広告運用と、それらを内向き分析に繋ぐ連結フロー。知能は外部AI(Claude API / 画像生成 / Meta Ads MCP)、レジはデータ供給と安全な受け皿に徹する。",
+  "author": { "name": "Techno-Rocky" },
+  "mcpServers": "./.mcp.json"
+}

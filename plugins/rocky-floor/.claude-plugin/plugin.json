@@ -1,0 +1,7 @@
+{
+  "name": "rocky-floor",
+  "version": "0.1.0",
+  "description": "現場オペ向け。営業中の卓・注文・在庫売切など瞬時の操作を声で。store_staff 向け(第二弾以降で拡充)。",
+  "author": { "name": "Techno-Rocky" },
+  "mcpServers": "./.mcp.json"
+}

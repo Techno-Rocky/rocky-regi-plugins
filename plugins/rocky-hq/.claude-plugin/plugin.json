@@ -1,0 +1,7 @@
+{
+  "name": "rocky-hq",
+  "version": "0.1.0",
+  "description": "経営・本部向け。全店を横串で俯瞰し、外れ値店の発見・施策の効き検証と横展開・離反客の掘り起こしまでを自然言語で。owner / hq_admin / hq_staff 向け。",
+  "author": { "name": "Techno-Rocky" },
+  "mcpServers": "./.mcp.json"
+}

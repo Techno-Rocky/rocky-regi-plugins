@@ -1,0 +1,33 @@
+{
+  "name": "rocky-regi-plugins",
+  "owner": {
+    "name": "Techno-Rocky",
+    "url": "https://github.com/Techno-Rocky"
+  },
+  "metadata": {
+    "description": "ロッキーレジ(飲食店POS)を claude.ai から自然言語で回すための業務フロープラグイン群。内向き分析・外側スキル・連結フローを立場別に束ねる。知能は外部AI・レジはデータ供給。",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "rocky-hq",
+      "source": "./plugins/rocky-hq",
+      "description": "経営・本部向け。全店を横串で俯瞰し、外れ値店の発見・施策の横展開・離反客の掘り起こしまで。owner / hq_admin / hq_staff 向け。"
+    },
+    {
+      "name": "rocky-store-manager",
+      "source": "./plugins/rocky-store-manager",
+      "description": "店長・単店運営向け。売上を方向で読み、死に筋を追跡し、季節プロモを差し替え、急落の原因を究明する。store_manager 向け。"
+    },
+    {
+      "name": "rocky-floor",
+      "source": "./plugins/rocky-floor",
+      "description": "現場オペ向け。営業中の卓・注文・在庫売切など瞬時の操作(第二弾以降で拡充)。store_staff 向け。"
+    },
+    {
+      "name": "rocky-ops",
+      "source": "./plugins/rocky-ops",
+      "description": "外側スキル。合成消費者調査(SSR)・クリエイティブ画像生成・Meta広告運用と、それらを内向き分析に繋ぐ連結フロー。知能は外部AI、レジはデータ供給と受け皿。"
+    }
+  ]
+}

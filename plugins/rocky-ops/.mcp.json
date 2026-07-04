@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "rocky-regi": {
+      "type": "http",
+      "url": "https://regi.techno-rocky.com/api/v1/mcp"
+    }
+  }
+}

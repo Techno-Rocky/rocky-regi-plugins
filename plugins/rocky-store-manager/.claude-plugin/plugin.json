@@ -1,0 +1,7 @@
+{
+  "name": "rocky-store-manager",
+  "version": "0.1.0",
+  "description": "店長・単店運営向け。売上を方向で読み、死に筋・失速メニューを追跡し、季節・高粗利プロモを差し替え、急落の原因を究明する。store_manager 向け。",
+  "author": { "name": "Techno-Rocky" },
+  "mcpServers": "./.mcp.json"
+}
