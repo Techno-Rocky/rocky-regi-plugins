@@ -22,7 +22,7 @@
     {
       "name": "rocky-floor",
       "source": "./plugins/rocky-floor",
-      "description": "現場オペ向け。営業中の卓・注文・在庫売切など瞬時の操作(第二弾以降で拡充)。store_staff 向け。"
+      "description": "現場オペ向け。営業中の卓・注文・在庫売切など瞬時の操作。store_staff 向け。※現状はMCP接続のみで専用スキルは未収録(第二弾以降で追加)。"
     },
     {
       "name": "rocky-ops",

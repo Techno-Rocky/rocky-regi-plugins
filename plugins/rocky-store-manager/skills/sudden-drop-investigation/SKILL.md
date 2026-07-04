@@ -93,5 +93,5 @@ show_hourly_heatmap / show_cancelled_items / show_menu_engineering / show_survey
 - 実行系(update_inventory / create_notice / reorder_menu_items / create_coupon_distribution_scenario など)はこのスキルから直接叩かない。打ち手は提案までで、実行は別スキル+オーナー確認+人間publish承認に渡す。
 - SSR(参考シナリオ生成)を主因確定の根拠に使わない。SSRは参考止まり・予言禁止。
 - レート制限を超える反復呼び出しをしない。深掘り4本は各1回まで。同一日を何度も再問い合わせしない。
-- #1674 ポータル巡回(Claude in Chrome での食べログ等の外部レビュー取得)はBOT規約リスクで保留中。このスキルからは呼ばない・言及しない。
+- 外部ポータル巡回(Claude in Chrome での食べログ等の外部レビュー取得)はBOT規約リスクで保留中。このスキルからは呼ばない・言及しない。
 - 外部Ads MCP(Meta公式)は未接続。広告出稿側の要因はこのスキルでは判定材料にしない。
