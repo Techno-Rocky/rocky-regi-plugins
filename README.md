@@ -14,7 +14,7 @@
 | **rocky-store-manager** | 店長・単店運営 | 売上を方向で読む／死に筋を追跡／季節プロモ差し替え／急落の原因究明 |
 | **rocky-hq** | 経営者・本部 | 全店を横串で俯瞰／外れ値店の発見／施策の効き検証と横展開／離反客の掘り起こし |
 | **rocky-ops** | 全職責横断 | 合成消費者調査(SSR)・画像生成・広告運用と、それらを内向き分析に繋ぐ**連結フロー** |
-| **rocky-floor** | 現場スタッフ | 営業中の卓・注文・在庫売切など瞬時の操作（現状はMCP接続のみ・専用スキルは第二弾以降） |
+| **rocky-floor** | 現場スタッフ | 営業中のフロア状況把握／売切ワンタップ／卓の移動・合流・クリア／コース進行／来店客把握 |
 
 権限は claude.ai ログイン（Clerk OAuth）で自動判定されます。現場スタッフが経営操作を呼んでも、レジ側が権限で弾くので安全です。
 
@@ -28,9 +28,13 @@
 | store-manager | `dead-menu-tracking`（死に筋・失速追跡） | 失速か構造的死に筋かを閾値で切り分け | 季節プロモ差し替え / メニュー編集 |
 | store-manager | `seasonal-promo-swap`（季節・高粗利プロモ差し替え） | 推しを粗利で入れ替える旗艦・閉ループ | 効き検証→横展開 |
 | store-manager | `sudden-drop-investigation`（単店急落 原因究明） | 期待レンジで誤警報を握りつぶす探偵 | 奪還配信（連結） |
+| store-manager | `menu-editing`（メニュー編集） | 差し替え・撤去・並び替え・オプションを実反映（要承認） | 死に筋追跡/プロモ差し替えの受け皿 |
+| store-manager | `cashier-closing`（レジ締め・日次クローズ） | 営業日開閉・ドロワー・締め帳票を安全順で | — |
+| store-manager | `mobile-order-approval`（モバイルオーダー承認） | 承認待ちキューを根拠付きでさばく | 売切管理 |
 | hq | `all-store-health-check`（全店ヘルスチェック） | 外れ値店だけ二段で深掘り | 売上レビュー / 急落究明 |
 | hq | `campaign-lift-rollout`（施策の効き検証→横展開） | lift判定→展開先選定→撤退判断 | 各店へ本適用 |
 | hq | `churn-winback-line`（離反客の掘り起こしLINE） | RFM抽出→到達検証→holdout配信 | ROI測定（後日） |
+| hq | `line-broadcast`（LINE配信） | セグメント→到達/残枠確認→送信（要承認） | 離反掘り起こしの実送信 |
 | ops | `ssr-synthetic-consumer`（合成消費者調査） | 反応を語らせ相対比較する補助線 | 各分析の裏取り |
 | ops | `creative-image-generation`（クリエイティブ画像生成） | 用途→候補→安全ゲート→publish承認 | LINE / ロゴ / 店舗サイト |
 | ops | `meta-ads-loop`（Meta広告運用ループ） | 機会検出→設計→計測→効果判定 | Meta未接続時は設計まで |
@@ -38,8 +42,11 @@
 | ops | `bridge-new-menu-screening`（新メニュー事前スクリーニング） | 穴→SSR→粗利→限定投入→較正 | 本適用 / 横展開 |
 | ops | `bridge-failing-menu-rescue`（失速メニュー救済） | 失速判別→SSR→制作→配信→検証 | 横展開 |
 | ops | `bridge-drop-winback`（単店急落→離反診断→奪還配信） | 誤警報ゲート→要因帰属→奪還配信 | ROI測定 |
-
-> ※ `rocky-floor` は現状スキルを収録していません（ロッキーレジMCPへの接続のみ）。上表のスキルは他3プラグインに含まれます。
+| floor | `floor-status`（フロア状況の即時把握） | 空席/滞留/要対応を機械仕分け（読取のみ） | 卓操作 / 売切管理 |
+| floor | `sold-out-toggle`（在庫売切のワンタップ管理） | 品切れを即反映・復活（1品ずつ承認） | — |
+| floor | `table-ops`（卓の移動・合流・クリア） | 卓の移動/合流/グループ化/強制クリア（不可逆は影響提示） | — |
+| floor | `course-pacing`（コース/食べ放題の進行管理） | 次の一皿のタイミングを卓ごとに | — |
+| floor | `guest-lookup`（来店客の把握） | アレルギー/常連/来店履歴/LINEを接客前に | — |
 
 ## 導入手順（店舗オーナー向け）
 
