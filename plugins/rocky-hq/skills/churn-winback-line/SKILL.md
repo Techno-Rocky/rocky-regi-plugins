@@ -18,6 +18,7 @@ description: hq_staffが「最近来てない客に何か打てる?」「LINEで
 - create_coupon_distribution_scenario — holdout群を最初から切る指定でシナリオ化(書込・オーナー承認必須)。
 - set_coupon_distribution_scenario_enabled — 承認後の配信開始スイッチ(書込)。
 - get_campaign_roi / get_intervention_effect — 配信後のROI測定(lift/holdout比較)。当フローでは「後日の再訪ステップ」として言及のみ。
+- list_stores — 対象店の確定(複数店運用時・手順1)。
 
 ## 手順(この順で多段に呼ぶ)
 
