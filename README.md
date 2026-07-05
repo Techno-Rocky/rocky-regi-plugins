@@ -1,7 +1,7 @@
 # rocky-regi プラグイン
 
-ロッキーレジ（飲食店POS）を **claude.ai から自然言語で回す**ための業務フロープラグイン集です。
-「今週どうだった?」「この売れないメニュー、どう直せばいい?」と話しかけるだけで、Claude がロッキーレジのデータを読み、方向を判断し、打ち手まで導きます。
+ロッキーレジ（飲食店POS）を **Claude / Claude Code / ChatGPT から自然言語で回す**ための業務フロー集です。
+「今週どうだった?」「この売れないメニュー、どう直せばいい?」と話しかけるだけで、AIがロッキーレジのデータを読み、方向を判断し、打ち手まで導きます。**プロンプトを1本貼るだけで、どのAIでも同じように使えます**（下記「使い方」）。
 
 ## 思想
 
@@ -48,18 +48,31 @@
 | floor | `table-ops`（卓の移動・合流・クリア） | 卓の移動/合流/グループ化/強制クリア（不可逆は影響提示・会計はprimary集約） | — |
 | floor | `printer-troubleshooting`（印刷が出ない時の切り分け） | エラーの型で用紙/ネットワーク/設定に切り分ける診断木 | — |
 
-## 導入手順（店舗オーナー向け）
+## 使い方 — 3つの入り方（どのAIでもOK）
 
-1. **claude.ai** を開き、左サイドバー → **Customize（カスタマイズ）** → **Plugins（プラグイン）** タブ
-2. **＋** → マーケットプレイスの追加で、このリポジトリの URL を指定
-   ```
-   https://github.com/Techno-Rocky/rocky-regi-plugins
-   ```
-3. 使いたいプラグイン（例: `rocky-store-manager`）を **Install**
-4. 初回にロッキーレジへの接続認可（ブラウザで自分のロッキーレジ・アカウントにログイン）
-5. 会話で「今週どうだった?」などと話しかける
+### A. いちばん簡単：プロンプトを貼るだけ 🟢
+1. [`prompts/rocky-operator.md`](prompts/rocky-operator.md) の本文（`===` で挟まれた部分）をコピー
+2. お使いのAI（**Claude / Claude Code / ChatGPT**）のチャットに貼り付け
+3. 初回だけ、プロンプトがそのAI用の接続手順を案内するので、その通りにロッキーレジへ接続（各AIで1クリック程度）
 
-> 接続先: `https://regi.techno-rocky.com/api/v1/mcp`（認証は各自のログインで行われるため、鍵の入力は不要です）
+→ 以降は「今週どうだった?」「この売れないメニューどうする?」などと話しかけるだけ。貼るプロンプトはどのAIでも同じ1本です。
+
+### B. Claude Code（プラグインとして・コネクタ同梱）
+```
+/plugin marketplace add Techno-Rocky/rocky-regi-plugins
+/plugin install rocky-store-manager@rocky-regi-plugins
+```
+プラグインが MCP接続とスキルを同梱するので、これだけで両方入ります（初回にログイン）。
+
+### C. Claude（claude.ai / デスクトップ / Cowork）
+- **コネクタ**：設定 → **Connectors** →「**＋ カスタムコネクタを追加**」→ 下記URLを貼付 → 画面の案内でログイン。
+- スキル/プラグインに対応した環境では、本リポジトリをスキル/プラグインとして追加すると各フローが使えます。
+
+### D. ChatGPT
+- 設定 → **Connectors** → **Advanced** → **Developer Mode** を ON → **Create** → 下記URLを貼付 → ログイン（Plus / Pro / Business / Enterprise / Edu）。
+- スキルは **A のプロンプト**を貼って使います（SKILL.md は ChatGPT には直接インストールできないため）。
+
+> **接続先（全AI共通）**: `https://regi.techno-rocky.com/api/v1/mcp`　認証は各自のロッキーレジ・ログインで行うので、鍵やトークンの入力は不要です。
 
 ## 外部ツールについて（rocky-ops）
 
