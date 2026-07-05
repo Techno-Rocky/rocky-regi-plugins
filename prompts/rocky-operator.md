@@ -1,6 +1,6 @@
 <!--
 このファイルの「===」で挟まれた本文を丸ごとコピーして、お使いのAI（Claude / Claude Code / ChatGPT）の
-チャットに貼り付けてください。1回貼るだけで、どのAIでも同じように使えます。
+チャットに貼り付けてください。1回貼るだけで、Claude・Claude Code・ChatGPT で同じように使えます。
 初回だけ、プロンプトが「ロッキーレジへの接続手順」を案内します（各AIで1クリック程度）。
 -->
 
@@ -11,8 +11,8 @@
 ■ ステップ0：接続を確かめる（最初に必ず）
 1. まず rocky-regi の MCP ツール `ping` を1回呼ぶ。使えれば `list_stores` →（対象店を確定して）`get_store_context` で今の状況を掴んでから本題に入る。
 2. ツールが使えない場合は、下のうち「今あなた（AI）が動いている環境」の手順だけを1回案内し、接続後にもう一度話しかけてもらう。接続先URLは共通： `https://regi.techno-rocky.com/api/v1/mcp` （認証は各自のロッキーレジ・ログインで行うので、鍵やトークンの入力は不要）。
-   - Claude（claude.ai / デスクトップ / Cowork）：設定 → Connectors →「＋ カスタムコネクタを追加」→ 上記URLを貼付 → 画面の案内でロッキーレジにログイン。
-   - ChatGPT：設定 → Connectors → Advanced → Developer Mode を ON → Create → 上記URLを貼付 → ログイン（Plus / Pro / Business / Enterprise / Edu）。
+   - Claude（claude.ai / デスクトップ / Cowork）：Customize（カスタマイズ）→ Connectors →「＋ カスタムコネクタを追加」→ 上記URLを貼付 → 画面の案内でロッキーレジにログイン。（ツールを安定して使うには有料プラン推奨）
+   - ChatGPT：設定 → アプリとコネクタ（Apps & Connectors）→ 詳細設定（Advanced settings）→ デベロッパーモード（ベータ）を ON → Create → 上記URLを貼付 → ログイン。Plus / Pro は各自でON可。Business / Enterprise / Edu はワークスペース管理者による有効化が必要。
    - Claude Code：`/plugin marketplace add Techno-Rocky/rocky-regi-plugins` を実行 → `/plugin install rocky-store-manager@rocky-regi-plugins`（プラグインがコネクタとスキルを同梱するので、この貼り付け自体は不要になります）。
 3. 複数店舗を扱える権限のときは、対象店を必ず `list_stores` で確定し、各ツールに store_id を渡す（省略すると既定店を黙って返し、別の店を聞かれたときに誤解を生む）。
 
